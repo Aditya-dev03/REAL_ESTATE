@@ -1,0 +1,98 @@
+{
+  "split_information": {
+    "train_rows": 17289,
+    "train_unique_ids": 17148,
+    "test_rows": 4324,
+    "test_unique_ids": 4288,
+    "test_size_fraction": 0.2,
+    "random_state": 42,
+    "id_overlap_count": 0
+  },
+  "features": {
+    "numeric": [
+      "sqft_living",
+      "sqft_basement",
+      "sqft_lot",
+      "sqft_living15",
+      "sqft_lot15",
+      "bathrooms",
+      "bedrooms",
+      "floors",
+      "waterfront",
+      "view",
+      "condition",
+      "grade",
+      "house_age",
+      "years_since_update",
+      "has_basement",
+      "is_renovated",
+      "lat",
+      "long",
+      "sale_year",
+      "sale_month"
+    ],
+    "categorical": [
+      "zipcode"
+    ],
+    "total_count": 21,
+    "excluded_columns": [
+      "id",
+      "sale_date",
+      "price"
+    ]
+  },
+  "target_variable": "price",
+  "target_transformation": "log1p (predictions inverted with expm1)",
+  "model_performance": {
+    "Baseline (Median)": {
+      "mae_dollar": 225269.18177613322,
+      "rmse_dollar": 385664.5313106057,
+      "r2": -0.0649144275812028,
+      "mae_log": 0.4155258409642994,
+      "rmse_log": 0.5323654332112067,
+      "r2_log": -0.005131120278756063,
+      "fit_time_seconds": 0.0
+    },
+    "Linear Regression": {
+      "mae_dollar": 75865.48965154226,
+      "rmse_dollar": 166769.99874053724,
+      "r2": 0.8008725360673382,
+      "mae_log": 0.1346479704705419,
+      "rmse_log": 0.1831093817425463,
+      "r2_log": 0.8810884022206471,
+      "fit_time_seconds": 0.05
+    },
+    "Ridge Regression": {
+      "mae_dollar": 75816.99160041909,
+      "rmse_dollar": 164329.91426859712,
+      "r2": 0.8066569483488168,
+      "mae_log": 0.13466336366043272,
+      "rmse_log": 0.18303590572379067,
+      "r2_log": 0.8811838140202399,
+      "fit_time_seconds": 0.04
+    },
+    "Random Forest": {
+      "mae_dollar": 69922.41392618604,
+      "rmse_dollar": 128629.26204797963,
+      "r2": 0.8815391436421643,
+      "mae_log": 0.12522920943988636,
+      "rmse_log": 0.1766696697394317,
+      "r2_log": 0.8893052518599416,
+      "fit_time_seconds": 0.91
+    },
+    "HistGradientBoosting": {
+      "mae_dollar": 63704.033051414845,
+      "rmse_dollar": 120139.76558004913,
+      "r2": 0.8966599012767287,
+      "mae_log": 0.11485424644508882,
+      "rmse_log": 0.16012758715485387,
+      "r2_log": 0.9090641058699497,
+      "fit_time_seconds": 4.33
+    }
+  },
+  "winning_model": {
+    "name": "HistGradientBoosting",
+    "rationale": "Achieved best generalization metrics across all evaluation criteria (lowest MAE: $63,704, lowest RMSE: $120,140, highest R\u00b2: 0.8967) with fast inference time and compact artifact size (~560 KB).",
+    "artifact_path": "models/price_model.joblib"
+  }
+}

@@ -1,0 +1,36 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+venv312/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Environment / secrets ---
+.env
+.streamlit/secrets.toml
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Generated data (re-created by code) ---
+data/processed/*
+!data/processed/.gitkeep
+
+# --- Local SQLite databases (re-created from the CSV) ---
+*.db
+*.sqlite
+*.sqlite3
+
+# Include clean data needed by the app
+!data/processed/bengaluru_clean.csv
+!data/processed/bengaluru_cleaning_report.json

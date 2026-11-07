@@ -1,0 +1,142 @@
+{
+  "dataset_metadata": {
+    "dataset": "Bengaluru House Price Dataset",
+    "train_rows": 10112,
+    "test_rows": 2528,
+    "random_state": 42,
+    "target": "price (in Lakhs INR, \u20b9100,000 per unit)"
+  },
+  "model_performance": {
+    "Baseline (Median)": {
+      "cv_mae_lakhs": 65.15,
+      "cv_r2": -0.0761,
+      "train_mae_lakhs": 65.12,
+      "test_mae_lakhs": 63.27,
+      "test_mae_inr": "\u20b96,327,136",
+      "test_medae_lakhs": 27.26,
+      "test_medae_inr": "\u20b92,726,000",
+      "test_rmse_lakhs": 148.87,
+      "test_r2": -0.0805,
+      "overfit_gap_mae_lakhs": -1.85
+    },
+    "Linear Regression (Raw)": {
+      "cv_mae_lakhs": 54.31,
+      "cv_r2": 0.3012,
+      "train_mae_lakhs": 52.4,
+      "test_mae_lakhs": 51.44,
+      "test_mae_inr": "\u20b95,143,819",
+      "test_medae_lakhs": 27.16,
+      "test_medae_inr": "\u20b92,716,146",
+      "test_rmse_lakhs": 119.73,
+      "test_r2": 0.3011,
+      "overfit_gap_mae_lakhs": -0.96
+    },
+    "Linear Regression (Log)": {
+      "cv_mae_lakhs": 78.39,
+      "cv_r2": -264.3361,
+      "train_mae_lakhs": 64.27,
+      "test_mae_lakhs": 48.78,
+      "test_mae_inr": "\u20b94,878,238",
+      "test_medae_lakhs": 17.27,
+      "test_medae_inr": "\u20b91,727,196",
+      "test_rmse_lakhs": 162.59,
+      "test_r2": -0.2889,
+      "overfit_gap_mae_lakhs": -15.48
+    },
+    "Ridge Regression (Raw)": {
+      "cv_mae_lakhs": 53.44,
+      "cv_r2": 0.3026,
+      "train_mae_lakhs": 51.97,
+      "test_mae_lakhs": 50.8,
+      "test_mae_inr": "\u20b95,079,652",
+      "test_medae_lakhs": 25.99,
+      "test_medae_inr": "\u20b92,598,509",
+      "test_rmse_lakhs": 119.87,
+      "test_r2": 0.2995,
+      "overfit_gap_mae_lakhs": -1.18
+    },
+    "Ridge Regression (Log)": {
+      "cv_mae_lakhs": 85.38,
+      "cv_r2": -389.3428,
+      "train_mae_lakhs": 69.04,
+      "test_mae_lakhs": 49.8,
+      "test_mae_inr": "\u20b94,979,981",
+      "test_medae_lakhs": 17.13,
+      "test_medae_inr": "\u20b91,713,136",
+      "test_rmse_lakhs": 172.62,
+      "test_r2": -0.4527,
+      "overfit_gap_mae_lakhs": -19.25
+    },
+    "Random Forest (Raw)": {
+      "cv_mae_lakhs": 34.57,
+      "cv_r2": 0.5912,
+      "train_mae_lakhs": 21.35,
+      "test_mae_lakhs": 34.01,
+      "test_mae_inr": "\u20b93,400,520",
+      "test_medae_lakhs": 13.41,
+      "test_medae_inr": "\u20b91,341,017",
+      "test_rmse_lakhs": 89.84,
+      "test_r2": 0.6065,
+      "overfit_gap_mae_lakhs": 12.66
+    },
+    "Random Forest (Log)": {
+      "cv_mae_lakhs": 32.98,
+      "cv_r2": 0.6075,
+      "train_mae_lakhs": 21.89,
+      "test_mae_lakhs": 32.6,
+      "test_mae_inr": "\u20b93,259,818",
+      "test_medae_lakhs": 12.95,
+      "test_medae_inr": "\u20b91,295,219",
+      "test_rmse_lakhs": 86.05,
+      "test_r2": 0.639,
+      "overfit_gap_mae_lakhs": 10.71
+    },
+    "HistGradientBoosting (Raw)": {
+      "cv_mae_lakhs": 36.36,
+      "cv_r2": 0.5767,
+      "train_mae_lakhs": 32.97,
+      "test_mae_lakhs": 34.09,
+      "test_mae_inr": "\u20b93,408,793",
+      "test_medae_lakhs": 15.2,
+      "test_medae_inr": "\u20b91,520,395",
+      "test_rmse_lakhs": 83.12,
+      "test_r2": 0.6632,
+      "overfit_gap_mae_lakhs": 1.11
+    },
+    "HistGradientBoosting (Log)": {
+      "cv_mae_lakhs": 33.45,
+      "cv_r2": 0.5968,
+      "train_mae_lakhs": 30.87,
+      "test_mae_lakhs": 32.15,
+      "test_mae_inr": "\u20b93,215,248",
+      "test_medae_lakhs": 12.46,
+      "test_medae_inr": "\u20b91,245,904",
+      "test_rmse_lakhs": 90.46,
+      "test_r2": 0.6011,
+      "overfit_gap_mae_lakhs": 1.28
+    }
+  },
+  "selected_model": {
+    "model_name": "Random Forest (Log)",
+    "selection_criterion": "Lowest mean 5-fold cross-validation MAE on training partition (training-only)",
+    "selection_rationale": "Pre-specified validation criterion: Lowest 5-fold CV MAE on training folds without test leakage. 'Random Forest (Log)' achieved the lowest CV MAE (\u20b932.98 Lakhs), lowest CV MedAE (\u20b912.49 Lakhs), and highest CV R\u00b2 (0.6075). Model selection was finalized strictly on training data prior to held-out test evaluation.",
+    "cv_metrics": {
+      "cv_mae_lakhs": 32.9779760852683,
+      "cv_rmse_lakhs": 96.42864748504228,
+      "cv_r2": 0.6074746416191545,
+      "cv_medae_lakhs": 12.490134153763545
+    },
+    "test_metrics": {
+      "cv_mae_lakhs": 32.98,
+      "cv_r2": 0.6075,
+      "train_mae_lakhs": 21.89,
+      "test_mae_lakhs": 32.6,
+      "test_mae_inr": "\u20b93,259,818",
+      "test_medae_lakhs": 12.95,
+      "test_medae_inr": "\u20b91,295,219",
+      "test_rmse_lakhs": 86.05,
+      "test_r2": 0.639,
+      "overfit_gap_mae_lakhs": 10.71
+    }
+  }
+}

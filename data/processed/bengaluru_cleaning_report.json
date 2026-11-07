@@ -1,0 +1,57 @@
+{
+  "initial_raw_rows": 13320,
+  "raw_missing_values": {
+    "area_type": 0,
+    "availability": 0,
+    "location": 1,
+    "size": 16,
+    "society": 5502,
+    "total_sqft": 0,
+    "bath": 73,
+    "balcony": 609,
+    "price": 0
+  },
+  "deduplication": {
+    "initial_rows": 13320,
+    "removed_duplicates": 529,
+    "final_dedup_rows": 12791
+  },
+  "flags_summary": {
+    "flag_area_typo_count": 7,
+    "flag_sqft_per_bhk_low_count": 606,
+    "flag_excessive_bathrooms_count": 16,
+    "flag_extreme_bhk_count": 12,
+    "flag_extreme_bath_count": 20
+  },
+  "severe_anomalies_filtered": 151,
+  "final_clean_rows": 12640,
+  "clean_missing_values": {
+    "area_type": 0,
+    "availability": 0,
+    "location": 0,
+    "size": 16,
+    "society": 5182,
+    "total_sqft": 0,
+    "bath": 73,
+    "balcony": 568,
+    "price": 0,
+    "location_clean": 0,
+    "total_sqft_clean": 0,
+    "bhk": 16,
+    "sqft_per_bhk": 16,
+    "price_per_sqft": 0,
+    "is_ready_to_move": 0,
+    "is_in_named_society": 0,
+    "flag_area_typo": 0,
+    "flag_sqft_per_bhk_low": 0,
+    "flag_excessive_bathrooms": 0,
+    "flag_extreme_bhk": 0,
+    "flag_extreme_bath": 0
+  },
+  "price_summary_lakhs": {
+    "min": 8.0,
+    "median": 72.0,
+    "mean": 114.13,
+    "max": 3600.0
+  }
+}
